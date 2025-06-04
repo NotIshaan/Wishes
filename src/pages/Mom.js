@@ -19,7 +19,7 @@ export default function Mom() {
     <div className="min-h-screen bg-pink-50 flex flex-col items-center justify-center text-center p-6 relative overflow-hidden">
       {showConfetti && <Confetti width={width} height={height} />}
 
-      <h1 className="text-4xl font-bold text-pink-600 mb-4">🎂 Happy Birthday Mom! 🎂</h1>
+      <h1 className="text-4xl font-bold text-pink-600 mb-4">🎂 Happy Birthday Mummy! 🎂</h1>
 
       {!showLetter && (
         <button
@@ -33,12 +33,14 @@ export default function Mom() {
       {showLetter && (
         <div className="bg-white shadow-xl rounded-xl p-6 text-left text-gray-800 font-[cursive] leading-relaxed max-w-xl mt-8 animate-fade-in">
           <p>
-            Dear Mom, <br /><br />
-            Every smile, every hug, every meal — you’ve given so much love, and I can never thank you enough. You are the most inspiring woman I know, and I’m proud to be your child. 💖<br /><br />
-            May this birthday be filled with love, laughter, and peace, just like you fill our lives with joy every day.<br /><br />
-            Love always,<br />
-            Ishaan
-          </p>
+           Dear Mom, <br /><br />
+          Happy Birthday! You’re the most caring, selfless, and beautiful soul I know. You’ve always put everyone else first, and I just want to say thank you for being the heart of everything good in my life. <br /><br />
+  I really miss bothering you in the kitchen, just to see what you’re cooking. It’s those everyday moments I didn’t realise I’d miss so much. <br /><br />
+  I hope this birthday brings you so much happiness. You deserve everything you’ve ever wished for and more. I wish you peace, laughter, good health, and all the love in the world. <br /><br />
+  Thank you for everything, Mom. I love you more than words can say. <br /><br />
+  Love,<br />
+  Ishaan
+</p>
         </div>
       )}
     </div>

@@ -7,9 +7,9 @@ export default function Landing() {
       <p className="text-lg text-gray-600 mb-8">Click below to view each surprise!</p>
 
       <div className="flex flex-col gap-4">
-        <Link to="/mom" className="bg-pink-300 hover:bg-pink-400 text-white py-2 px-6 rounded-xl shadow-md text-xl transition">🎂 Wish for Mom</Link>
-        <Link to="/anniversary" className="bg-yellow-300 hover:bg-yellow-400 text-white py-2 px-6 rounded-xl shadow-md text-xl transition">💍 Parents' Anniversary</Link>
-        <Link to="/didi" className="bg-purple-300 hover:bg-purple-400 text-white py-2 px-6 rounded-xl shadow-md text-xl transition">🎉 Wish for Didi</Link>
+        <Link to="/mom" className="bg-pink-300 hover:bg-pink-400 text-white py-2 px-6 rounded-xl shadow-md text-xl transition">🎂 For Mom</Link>
+        <Link to="/anniversary" className="bg-yellow-300 hover:bg-yellow-400 text-white py-2 px-6 rounded-xl shadow-md text-xl transition">💍 For Mom and Dad</Link>
+        <Link to="/didi" className="bg-purple-300 hover:bg-purple-400 text-white py-2 px-6 rounded-xl shadow-md text-xl transition">🎉 For Didi</Link>
       </div>
     </div>
   );
