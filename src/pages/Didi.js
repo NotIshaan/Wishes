@@ -13,9 +13,8 @@ export default function Didi() {
     setTimeout(() => {
       setShowConfetti(false);
       setShowLetter(true);
-      // delay a bit before popping photos
       setTimeout(() => setShowPhotos(true), 300);
-    }, 3000); // confetti for 3 seconds
+    }, 3000);
   };
 
   const photos = [
@@ -26,10 +25,10 @@ export default function Didi() {
   ];
 
   const positions = [
-    { top: '10%', left: '5%', rotate: '-4deg' },
-    { top: '10%', right: '5%', rotate: '6deg' },
-    { bottom: '10%', right: '10%', rotate: '2deg' },
-    { bottom: '10%', left: '10%', rotate: '-1deg' }
+    { top: '0%', left: '5%', rotate: '-4deg' },
+    { top: '5%', right: '5%', rotate: '6deg' },
+    { bottom: '0%', right: '5%', rotate: '2deg' },
+    { bottom: '5%', left: '5%', rotate: '-1deg' }
   ];
 
   return (
@@ -49,60 +48,55 @@ export default function Didi() {
 
       {showLetter && (
         <>
-          <div className="bg-white shadow-xl rounded-xl p-6 text-left text-gray-800 font-[cursive] leading-relaxed max-w-xl mt-8 animate-fade-in">
-  <p>
-    Dear Didi, <br /><br />
-    Thank you for always being there for me and Puru. Whether it's helping us out or just being around, you’ve always had our back, and it means a lot. <br /><br />
-    You're honestly the coolest sister ever, and we feel lucky to have you. I you get you everything you wish for. May God bless you with happiness, good health, and lots of peace. <br /><br />
-    Love,<br />
-    Ishaan 💖
-  </p>
-</div>
+          <div className="bg-white shadow-xl rounded-xl p-6 text-left text-gray-800 font-[cursive] leading-relaxed max-w-xl mt-8 animate-fade-in z-10 relative">
+            <p>
+              Dear Didi, <br /><br />
+              Thank you for always being there for me and Puru. Whether it's helping us out or just being around, you’ve always had our back, and it means a lot. <br /><br />
+              You're honestly the coolest sister ever, and we feel lucky to have you. I hope you get everything you wish for. May God bless you with happiness, good health, and lots of peace. <br /><br />
+              Love,<br />
+              Ishaan 💖
+            </p>
 
-
-          {/* Clean positioned photos */}
-          {photos.map((src, i) => (
-            <img
-              key={i}
-              src={src}
-              alt={`Didi photo ${i + 1}`}
-              className={`
-                fixed w-80 h-80 object-cover rounded-xl shadow-md transform transition-all duration-700 ease-out z-20
-                ${showPhotos ? 'scale-100 opacity-100' : 'scale-0 opacity-0'}
-              `}
-              style={{
-                ...positions[i],
-                transform: showPhotos ? `rotate(${positions[i].rotate}) scale(1)` : 'rotate(0deg) scale(0)',
-                transitionDelay: `${i * 200}ms`,
-              }}
-            />
-          ))}
-          
-          {/* Laughing emoji for didi2 (funny image) */}
-          {showPhotos && (
-            <div 
-              className="fixed text-6xl z-30 transition-all duration-700 ease-out"
-              style={{
-                top: '15%',
-                right: '25%',
-                transform: 'rotate(-15deg)',
-                transitionDelay: '800ms',
-              }}
-            >
-              😂
+            {/* Photo Container */}
+            <div className="relative w-full max-w-5xl h-[400px] mt-10 mx-auto">
+              {photos.map((src, i) => (
+                <img
+                  key={i}
+                  src={src}
+                  alt={`Didi photo ${i + 1}`}
+                  className={`
+                    absolute w-48 md:w-64 lg:w-80 h-auto object-cover rounded-xl shadow-md
+                    transform transition-all duration-700 ease-out z-20
+                    ${showPhotos ? 'scale-100 opacity-100' : 'scale-0 opacity-0'}
+                  `}
+                  style={{
+                    transform: showPhotos
+                      ? `rotate(${positions[i].rotate}) scale(1)`
+                      : 'rotate(0deg) scale(0)',
+                    transitionDelay: `${i * 200}ms`,
+                    ...positions[i],
+                  }}
+                />
+              ))}
             </div>
-          )}
+
+            {/* Optional laughing emoji */}
+            {showPhotos && (
+              <div
+                className="absolute text-6xl z-30 transition-all duration-700 ease-out"
+                style={{
+                  top: '10%',
+                  right: '30%',
+                  transform: 'rotate(-15deg)',
+                  transitionDelay: '800ms',
+                }}
+              >
+                😂
+              </div>
+            )}
+          </div>
         </>
       )}
-
-      <style jsx>{`
-        @keyframes bounce {
-          0% { transform: scale(0) rotate(0deg); }
-          50% { transform: scale(1.2) rotate(${positions[0]?.rotate || '0deg'}); }
-          70% { transform: scale(0.9) rotate(${positions[0]?.rotate || '0deg'}); }
-          100% { transform: scale(1) rotate(${positions[0]?.rotate || '0deg'}); }
-        }
-      `}</style>
     </div>
   );
 }
