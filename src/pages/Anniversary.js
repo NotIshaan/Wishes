@@ -5,19 +5,19 @@ import "slick-carousel/slick/slick-theme.css";
 const photos = [
   {
     src: "/anniversary1.jpg",
-    msg: "The day it all began ❤️",
+    msg: "I am grateful to have you both as my parents.",
   },
   {
     src: "/anniversary2.jpg",
-    msg: "Your endless teamwork and love 💛",
+    msg: "I know tough times will pass",
   },
   {
     src: "/anniversary3.jpg",
-    msg: "Growing stronger together every year 🌿",
+    msg: "As long as you are together, everything will be alright.",
   },
   {
     src: "/anniversary4.jpg",
-    msg: "Cheers to many more beautiful years! 🥂",
+    msg: "Asech hasat rahava 😁",
   },
 ];
 
@@ -36,7 +36,7 @@ export default function Anniversary() {
     <div className="min-h-screen bg-yellow-100 flex flex-col items-center justify-center text-center p-6 font-handwritten">
       <h1 className="text-4xl font-bold text-yellow-700 mb-4">💍 Happy Anniversary Mom & Dad 💍</h1>
       <p className="text-lg text-yellow-900 max-w-2xl mb-8">
-        Your love, patience, and teamwork inspire me every day. Here's to many more years together 🥂
+        Your love, patience, and teamwork inspire me every day. Thank you for being the best parents and role models. May your love continue to grow stronger with each passing year. 🥰
       </p>
       <div className="w-full max-w-lg">
         <Slider {...settings}>
